@@ -95,6 +95,30 @@ public class Player {
             System.out.println("Invalid direction");
         }
     }
-    //other methods
 
+    public void move(int direction, int units) {
+        for (int i = 0; i < units; i++ ) {
+
+        }
+    }
+
+    public void teleport(int x, int y, int z) {
+
+    }
+
+    public void teleport(Player player) {
+
+    }
+
+    public void attack(Player player, int damage) {
+
+    }
+    //other methods
+    public double getDistance(int x, int y, int z) {
+
+    }
+
+    public double getDistance(Player player) {
+
+    }
 }

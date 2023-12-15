@@ -97,28 +97,56 @@ public class Player {
     }
 
     public void move(int direction, int units) {
-        for (int i = 0; i < units; i++ ) {
-
+        if (direction > 0 || direction <= 6) {
+            this.direction = direction;
+            if (direction == 1) {
+                this.x += units;
+            } else if (direction == 2) {
+                this.x -= units;
+            } else if (direction == 3) {
+                this.y += units;
+            } else if (direction == 4) {
+                this.y -= units;
+            } else if (direction == 5) {
+                this.z += units;
+            } else if (direction == 6) {
+                this.z -= units;
+            }
+        } else {
+            System.out.println("Invalid direction");
         }
     }
 
     public void teleport(int x, int y, int z) {
-
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 
     public void teleport(Player player) {
-
+        this.x = player.getX();
+        this.y = player.getY();
+        this.z = player.getZ();
     }
 
     public void attack(Player player, int damage) {
-
+        this.hp += (damage/2);
+        player.setHp(player.getHP() - damage);
     }
     //other methods
     public double getDistance(int x, int y, int z) {
-
+        double xDistance = x - getX();
+        double yDistance = y - getY();
+        double zDistance = z - getZ();
+        double distance = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2) + Math.pow(zDistance, 2));
+        return distance;
     }
 
     public double getDistance(Player player) {
-
+        double xDistance = player.getX() - getX();
+        double yDistance = player.getX() - getY();
+        double zDistance = player.getX() - getZ();
+        double distance = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2) + Math.pow(zDistance, 2));
+        return distance;
     }
 }

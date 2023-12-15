@@ -100,17 +100,17 @@ public class Player {
         if (direction > 0 || direction <= 6) {
             this.direction = direction;
             if (direction == 1) {
-                this.x = x + units;
+                this.x += units;
             } else if (direction == 2) {
-                this.x = x - units;
+                this.x -= units;
             } else if (direction == 3) {
-                this.y = y + units;
+                this.y += units;
             } else if (direction == 4) {
-                this.y = y - units;
+                this.y -= units;
             } else if (direction == 5) {
-                this.z = z + units;
+                this.z += units;
             } else if (direction == 6) {
-                this.z = z - units;
+                this.z -= units;
             }
         } else {
             System.out.println("Invalid direction");
@@ -130,8 +130,8 @@ public class Player {
     }
 
     public void attack(Player player, int damage) {
-        player.hp = player.hp - damage;
-        hp = hp + (damage/2);
+        this.hp += (damage/2);
+        player.setHp(player.getHP() - damage);
     }
     //other methods
     public double getDistance(int x, int y, int z) {

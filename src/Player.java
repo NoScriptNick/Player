@@ -1,7 +1,7 @@
 public class Player {
 
     //attributes
-    private int numPlayers;
+    public static int numPlayers;
     private int x;
     private int y;
     private int z;
@@ -17,6 +17,7 @@ public class Player {
         y = 0;
         z = 0;
         direction = 1;
+        numPlayers++;
     }
 
     public Player(String name, int x, int y, int z) {
@@ -25,6 +26,7 @@ public class Player {
         this.y = y;
         this.z = z;
         hp = 20;
+        numPlayers++;
     }
 
     public Player(String name, int x, int y, int z, int hp, int direction) {
@@ -42,6 +44,7 @@ public class Player {
         } else {
             System.out.println("Invalid direction");
         }
+        numPlayers++;
     }
 
     //accessors

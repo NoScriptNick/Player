@@ -10,5 +10,21 @@ public class Main {
         System.out.println(p1.toString());
         System.out.println(p2.toString());
         System.out.println(p3.toString());
+
+        p1.move(1, 5);
+        System.out.println(p1.getName() + " moves 5 units North" );
+        System.out.println(p1.toString());
+
+        p2.teleport(4, 2, 0);
+        System.out.println(p2.getName() + " teleports to 4, 2, 0");
+        System.out.println(p2.toString());
+
+        p3.attack(p1, 12);
+        System.out.println(p3.getName() + " attacks " + p1.getName() + " for 12 HP!!!! HOLY CRAP!!!!");
+        System.out.println(p3.toString());
+        System.out.println(p1.toString());
+
+        System.out.println(p2.getName() + " is " + p2.getDistance(p1) + " units away from " + p1.getName());
+
     }
 }
